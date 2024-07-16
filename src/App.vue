@@ -1,9 +1,9 @@
 <script>
+import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppAbout from './pages/AppAbout.vue';
 import AppContact from './pages/AppContact.vue';
 import AppHome from './pages/AppHome.vue';
-
 
 
 export default{
@@ -12,7 +12,8 @@ export default{
     AppAbout,
     AppContact,
     AppHeader,
-    AppHome
+    AppHome,
+    AppFooter
   }
 }
 </script>
