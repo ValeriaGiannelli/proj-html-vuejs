@@ -11,10 +11,13 @@ export default{
                 <img src="../../public/assets/image (13).svg" alt="">
             </div>
             <div class="col">
-                <img src="../../public/assets/image (13).svg" alt="">
+                <img src="../../public/assets/image (14).svg" alt="">
             </div>
             <div class="col">
-                <img src="../../public/assets/image (13).svg" alt="">
+                <img src="../../public/assets/image (15).svg" alt="">
+            </div>
+            <div class="col">
+                <img src="../../public/assets/image (16).svg" alt="">
             </div>
         </div>
     </div>

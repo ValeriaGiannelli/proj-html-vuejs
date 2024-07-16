@@ -13,7 +13,7 @@ export default{
 </script>
 
 <template>
-
+    <CounterIcon/>
 </template>
 
 <style scoped>
