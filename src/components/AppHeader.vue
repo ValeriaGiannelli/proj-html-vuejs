@@ -1,13 +1,21 @@
 <script>
+import { router } from '../router';
+
 export default{
     name: "AppHeader",
+    data(){
+        return{
+            router
+        } 
+    }
+
 }
 </script>
 
 <template>
-    <div>
-        <h1>Ciao!!</h1>
-    </div>
+<div>
+    
+</div>
 </template>
 
 <style scoped>
