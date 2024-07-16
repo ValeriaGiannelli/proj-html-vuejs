@@ -14,6 +14,7 @@ export default{
 
 <template>
     <CounterIcon/>
+    <AlbumNow/>
 </template>
 
 <style scoped>

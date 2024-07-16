@@ -6,8 +6,39 @@ export default{
 
 <template>
     <!-- Immagine della chitarra da inserire in Home e AbouUs -->
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h5>INSTRUMENTAL ROCK</h5>
+                <h2>ALBUM OUT NOW</h2>
+                <button class="my_btn_read">READ MORE</button class="btn_read">
+            </div>
+        </div>
+     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '../assets/styles/partials/variables' as*;
 
+.container-fluid{
+    background-image: url(../../public/assets/cms_parallax.jpg);
+    background-position: center;
+    text-align: center;
+    padding: 200px 0;
+    color: white;
+
+    h5{
+        color: $primary;
+    }
+    h2{
+        font-size: 5rem;
+        margin: 10px auto;
+    }
+    .my_btn_read{
+        color: white;
+        padding: 5px 10px;
+        background-color: black;
+        border: 1px solid $primary;
+    }
+}
 </style>
