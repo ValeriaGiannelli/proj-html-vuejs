@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppAbout from './pages/AppAbout.vue';
 import AppContact from './pages/AppContact.vue';
+import AppHome from './pages/AppHome.vue';
 
 
 
@@ -10,7 +11,8 @@ export default{
   components:{
     AppAbout,
     AppContact,
-    AppHeader
+    AppHeader,
+    AppHome
   }
 }
 </script>
@@ -18,9 +20,12 @@ export default{
 <template>
   <h1>Ciao sono app</h1>
   <AppHeader/>
-
+  <main>
+    <AppHome />
+  </main>
 </template>
 
 <style lang="scss">
+@use './assets/styles/general.scss';
 
 </style>
