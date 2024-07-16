@@ -19,7 +19,7 @@ export default{
 <template>
   <!-- <h1>Ciao sono app</h1> -->
   <!-- <AppHeader/> -->
-  <!-- <AppFooter /> -->
+  <AppFooter />
 </template>
 
 <style lang="scss">
