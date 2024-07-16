@@ -17,9 +17,9 @@ export default{
 </script>
 
 <template>
-  <h1>Ciao sono app</h1>
-  <AppHeader/>
-
+  <!-- <h1>Ciao sono app</h1> -->
+  <!-- <AppHeader/> -->
+  <!-- <AppFooter /> -->
 </template>
 
 <style lang="scss">
