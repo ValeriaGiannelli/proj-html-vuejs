@@ -1,6 +1,37 @@
 <script>
 export default{
     name: "CounterIcon",
+    data(){
+        return {
+            
+        }
+    },
+    methods: {
+
+        getCounters(){
+
+        // JavaScript code goes here
+        const counter = document.getElementById('counter');
+        const duration = 2000; // 2 secondi
+        let target = 900;
+        const interval = 10; // interval in milliseconds
+        const increment = target / (duration / interval); //Calcolo per arrivare a 900
+
+        let current = 0;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            counter.innerText = Math.round(current);
+            }, interval);
+        }
+        
+    },
+    mounted(){
+        // this.getCounters();
+    }
 }
 </script>
 
@@ -9,12 +40,13 @@ export default{
         <div class="row">
             <div class="col">
                 <img src="../../public/assets/image (13).svg" alt="">
-                <span>COUNTER</span>
+                <span @click="getCounters" id="counter">0</span>
                 <h3>CONCERTS</h3>
+
             </div>
             <div class="col">
                 <img src="../../public/assets/image (14).svg" alt="">
-                <span>COUNTER</span>
+                <span></span>
                 <h3>HAPPY CLIENTS</h3>
             </div>
             <div class="col">
@@ -31,7 +63,8 @@ export default{
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
 .container-fluid {
     background-color: black;
     opacity: 0.8;
