@@ -1,6 +1,30 @@
 <script>
 export default{
     name: "AppFooter",
+    data() {
+        return {
+            bookings: [
+                '502 New Design Str, Melbourne, San Francisco, CA 94110, United States Of America​ Australia',
+                'T: 1 123-456-789',
+                'Email: demo@example.com'
+            ],
+            information: [
+                'Product Support',
+                'Checkout',
+                'Report Abuse',
+                'America Austarlia',
+                'Redeem Voucher',
+                'Order Status'
+            ],
+            support: [
+                'Poliicies e Rules',
+                'Privacy Policy',
+                'License Polixy',
+                'My Account',
+                'Locality'
+            ]
+        }
+    }
 }
 </script>
 
@@ -20,12 +44,7 @@ export default{
 
                 <!-- Voice -->
                 <ul>
-                    <li>502 New Design Str,</li>
-                    <li>Melbourne, San Francisco,</li>
-                    <li>CA 94110, United States Of</li>
-                    <li>America​ Australia</li>
-                    <li>T: 1 123-456-789</li>
-                    <li>Email: demo@example.com</li>
+                    <li v-for="(book,index) in bookings" :key="index">{{ book }}</li>
                 </ul>
             </div>
 
@@ -37,12 +56,7 @@ export default{
 
                 <!-- Voice -->
                 <ul>
-                    <li>Product Support</li>
-                    <li>Checkout</li>
-                    <li>Report Abuse</li>
-                    <li>America​ Australia</li>
-                    <li>Redeem Voucher</li>
-                    <li>Order Status</li>
+                    <li v-for="(info,index) in information" :key="index">{{ info }}</li>
                 </ul>
             </div>
 
@@ -54,11 +68,7 @@ export default{
 
                 <!-- Voice -->
                 <ul>
-                    <li>Policies e Rules</li>
-                    <li>Privacy Policy</li>
-                    <li>License Policy</li>
-                    <li>My Account</li>
-                    <li>Locality</li>
+                    <li v-for="(sup,index) in support" :key="index">{{ sup }}</li>
                 </ul>
             </div>
 
@@ -84,7 +94,11 @@ export default{
                 </div>
             </div>
         </div>
-        <div class="row"></div>
+
+        <!-- Copyright -->
+        <div class="row border_color">
+            <div class="col d-flex justify-content-around p-3">© 2024 All Rights Reserved. Developed By TemplateMela</div>
+        </div>
     </div>
 </template>
 
@@ -93,7 +107,7 @@ export default{
 @use '../assets/styles/partials/variables' as *;
 
 // General
-.container-fluid{
+.container-fluid>.row{
     padding: 50px;
     color: $secondary;
     background-color: $bgcolor;
@@ -102,6 +116,10 @@ export default{
 // List style Sass
 ul {
     list-style: none;
+
+    li{
+        max-width: 200px;
+    }
 }
 
 
@@ -113,5 +131,9 @@ button{
     border-color: $primary;
     color: $secondary;
     background-color: $bgcolor;
+}
+
+.border_color{
+    border-top: 1px solid #ffffff;
 }
 </style>

@@ -25,7 +25,6 @@ export default{
     background-position: center;
     text-align: center;
     padding: 200px 0;
-    color: white;
 
     h5{
         color: $primary;
@@ -33,12 +32,6 @@ export default{
     h2{
         font-size: 5rem;
         margin: 10px auto;
-    }
-    .my_btn_read{
-        color: white;
-        padding: 5px 10px;
-        background-color: black;
-        border: 1px solid $primary;
     }
 }
 </style>

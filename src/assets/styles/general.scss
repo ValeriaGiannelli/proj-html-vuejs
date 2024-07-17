@@ -1,7 +1,10 @@
+@use './partials/variables' as *;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: $secondary;
 }
 
 img {
@@ -14,4 +17,10 @@ a {
 
 ul {
     list-style: none;
+}
+
+.my_btn_read {
+    padding: 5px 10px;
+    background-color: black;
+    border: 1px solid $primary;
 }
