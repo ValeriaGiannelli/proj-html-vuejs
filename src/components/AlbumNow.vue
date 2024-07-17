@@ -6,7 +6,7 @@ export default{
 
 <template>
     <!-- Immagine della chitarra da inserire in Home e AbouUs -->
-     <div class="container-fluid">
+     <div class="container-fluid my_padding">
         <div class="row">
             <div class="col">
                 <h5>INSTRUMENTAL ROCK</h5>
@@ -24,6 +24,11 @@ export default{
     background-image: url(../../public/assets/cms_parallax.jpg);
     background-position: center;
     text-align: center;
+    // padding: 200px 0;
+    &.my_padding{
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
 
     h5{
         color: $primary;
