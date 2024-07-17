@@ -15,6 +15,10 @@ export default{
         <div class="social_stream">
             <span>Stream On:</span>
             <img src="../../public/assets/image (20).svg" alt="">
+            <img src="../../public/assets/image (21).svg" alt="">
+            <img src="../../public/assets/image (16).svg" alt="">
+            <img src="../../public/assets/image (1).svg" alt="">
+            <img src="../../public/assets/image (20).svg" alt="">
         </div>
     </div>
 </template>
@@ -28,6 +32,7 @@ export default{
     .social_stream{
         img{
             margin: 0 5px;
+            max-height: 18px;
             max-width: 18px;
             filter: invert(1);
         }

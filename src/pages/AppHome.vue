@@ -38,6 +38,36 @@ export default{
                     title: 'MAKE YOUR NIGHT GROOVY'
                 },
                 
+            ],
+            eventImage: [
+                {
+                    url: 'hip_hop_wired_to_dance_make.jpg',
+                    title: 'HIP HOP WIRED TO DANCE MAKE'
+                },
+                {
+                    url: 'music_business-worldwide.jpg',
+                    title: 'MUSIC BUSINESS WORLDWIDE'
+                },
+                {
+                    url: 'giveaways_rock.jpg',
+                    title: 'GIVEAWEYS ROCK TO ALL'
+                },
+                {
+                    url: 'drowned_in_sound_feel_joy.jpg',
+                    title: 'DROWEND IN SOUND FEEL JOY'
+                },
+                {
+                    url: 'dancing_astronaut_bounce_ipsum.jpg',
+                    title: 'DANCING ASTROUNAUT BOUNCE IPSUM'
+                },
+                {
+                    url: 'consequence_of_sound_make_us.jpg',
+                    title: 'CONSEQUENCE OF SOUND MAKE US'
+                },
+                {
+                    url: 'artist_development_and_production.jpg',
+                    title: 'ARTIST DEVELOPMENT AND PRODUCTION'
+                },
             ]
         }
     }
@@ -110,12 +140,28 @@ export default{
     <section>
         <div class="container-fluid bg-black pt-5">
             <div class="row">
+                <h5>WHO WE ARE</h5>
+                <h2>SENSE THE JAZZ</h2>
                 <AppCard v-for="singleImage in imagesGallery" :img="singleImage.url" :imgTitle="singleImage.title"/>
             </div>
         </div>
     </section>
-    <CounterIcon/>
     <AlbumNow/>
+    <CounterIcon/>
+<!-- Musci blog da rifa -->
+    <section>
+        <div class="container-fluid">
+            <div class="row bg-black justify-content-center">
+                <div class="col-9">
+                    <h5>MUSIC BLOG</h5>
+                    <h2>BEST MUSIC BLOG</h2>
+                    <div class="slider_img">
+                        <AppCard v-for="singleBlog in eventImage" :img="singleBlog.url" :imgTitle="singleBlog.title"/>
+                    </div>
+                </div>      
+            </div>
+        </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
@@ -185,5 +231,10 @@ export default{
     img{
         max-height: 150px;
     }
+}
+
+.slider_img{
+    display: flex;
+    justify-content: flex-start;
 }
 </style>
