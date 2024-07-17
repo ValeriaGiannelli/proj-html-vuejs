@@ -36,7 +36,7 @@ export default{
 </script>
 
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid my_padding">
         <div class="row">
             <div class="col">
                 <img src="../../public/assets/image (13).svg" alt="">
@@ -72,7 +72,10 @@ export default{
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 0;
+    &.my_padding{
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
 
     img{
     max-height: 75px;
