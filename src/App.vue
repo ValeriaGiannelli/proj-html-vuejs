@@ -44,7 +44,7 @@ export default{
     <!-- <AlbumNow /> -->
 
      <!-- Insserire App Paragrafo -->
-    <!-- <DescriptionRight /> -->
+ 
   </main>
 
     <!-- <h1>Ciao sono app</h1> -->
