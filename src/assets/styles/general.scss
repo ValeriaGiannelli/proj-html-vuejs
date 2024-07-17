@@ -6,10 +6,6 @@
     box-sizing: border-box;
 }
 
-main {
-    overflow-x: hidden;
-}
-
 img {
     width: 100%;
 }
@@ -26,5 +22,5 @@ ul {
     padding: 5px 10px;
     background-color: black;
     border: 1px solid $primary;
-    color:$secondary;
+    color: $secondary;
 }

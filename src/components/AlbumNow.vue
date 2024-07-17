@@ -24,7 +24,6 @@ export default{
     background-image: url(../../public/assets/cms_parallax.jpg);
     background-position: center;
     text-align: center;
-    padding: 200px 0;
 
     h5{
         color: $primary;
