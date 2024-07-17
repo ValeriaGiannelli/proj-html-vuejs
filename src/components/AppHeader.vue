@@ -42,7 +42,7 @@ export default{
 
 <template>
 <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg bg-black p-4 sticky-top">
+    <nav class="navbar navbar-expand-lg bg-black p-4 sticky-top custom-shadow">
 
         <div class="container-fluid">
             <!-- logo -->
@@ -77,10 +77,10 @@ export default{
                     </li> -->
                 </ul>
 
-                <form class="d-flex" role="search">
+                <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </form> -->
             </div>            
         </div>
     </nav>
@@ -93,6 +93,20 @@ export default{
 
 .navbar-nav .nav-link{
     color: $secondary;
+    text-transform: uppercase;
+    font-weight: bold;
 }
+.navbar-nav:hover, .nav-link:hover{
+    color:orange;
+}
+
+.router-link-active.router-link-exact-active{
+    color:$primary;
+}
+
+.custom-shadow {
+    box-shadow: 0px 5px 5px 0px rgba(255, 255, 255, 0.1);
+}
+
 
 </style>
