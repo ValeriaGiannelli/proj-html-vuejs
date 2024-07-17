@@ -120,5 +120,10 @@ export default {
     
 }
 
+.accordion-button:not(.collapsed){
+    color:orange;
+    background-color: black;
+}
+
 
 </style>
