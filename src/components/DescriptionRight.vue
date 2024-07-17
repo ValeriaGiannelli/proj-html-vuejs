@@ -102,8 +102,12 @@ export default {
     color: $primary;
 }
 
-.accordion:active{
-    color: $primary;
+.accordion{
+
+    &:active{
+        color: $primary;
+    }
+    
 }
 
 </style>

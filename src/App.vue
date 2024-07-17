@@ -4,10 +4,6 @@ import AppHeader from './components/AppHeader.vue';
 import AppAbout from './pages/AppAbout.vue';
 import AppContact from './pages/AppContact.vue';
 import AppHome from './pages/AppHome.vue';
-import AppBread from './components/AppBread.vue';
-import DescriptionLeft from './components/DescriptionLeft.vue';
-import DescriptionRight from './components/DescriptionRight.vue';
-import AlbumNow from './components/AlbumNow.vue';
 
 
 export default{
@@ -18,10 +14,6 @@ export default{
     AppHeader, // For all page
     AppHome, //HOME PAGE
     AppFooter, 
-    AppBread,
-    DescriptionLeft,
-    DescriptionRight,
-    AlbumNow
   }
 }
 </script>
@@ -30,22 +22,13 @@ export default{
 
 
   <AppHeader/>
+  <router-view></router-view>
   <main>
+
     <!-- <AppHome /> -->
+    <!-- <AppAbout /> -->
     <!-- <AppContact /> -->
 
-    <!-- DEBUG -->
-    <!-- <AppContact /> -->
-    <!-- <AppBread /> -->
-
-    <!-- Insserire App Paragrafo -->
-    <!-- <DescriptionLeft /> -->
-
-    <!-- Album out now -->
-    <!-- <AlbumNow /> -->
-
-     <!-- Insserire App Paragrafo -->
- 
   </main>
 
     <!-- <h1>Ciao sono app</h1> -->
