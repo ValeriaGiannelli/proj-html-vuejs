@@ -42,7 +42,7 @@ export default{
     padding: 100px 0;
 
     img{
-    max-height: 150px;
+    max-height: 75px;
     margin-bottom: 20px;
     filter: invert(1);
     }
