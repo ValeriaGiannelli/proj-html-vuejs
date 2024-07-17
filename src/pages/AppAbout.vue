@@ -15,12 +15,23 @@ export default{
         AlbumNow,
         CounterIcon,
         StaffAbout
-  }
+    },
+    data(){
+        return {
+            
+            infoBread: [
+                {
+                    "namePath": "About Us",
+                    "home": "Home"
+                }
+            ]
+        }
+    }
 }
 </script>
 
 <template>
-    <AppBread />
+    <AppBread :info="infoBread"/>
 
     <!-- Insserire App Paragrafo -->
     <DescriptionLeft />
@@ -39,5 +50,7 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-
+*{
+    color: #fff
+}
 </style>

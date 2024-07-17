@@ -41,6 +41,7 @@ h3{
 
 h2{
     font-size: 45px;
+    color: $secondary
 }
 
 // Indentation
@@ -48,6 +49,7 @@ p{
     max-width: 50%;
     font-size: 15px;
     margin: 25px 0;
+    color: $secondary
 }
 
 img{

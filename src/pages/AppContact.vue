@@ -9,6 +9,12 @@ export default{
     data(){
         return {
             store,
+            infoBread: [
+                {
+                    "namePath": "Contact Us",
+                    "home": "Home"
+                }
+            ]
         }
     },
 }
