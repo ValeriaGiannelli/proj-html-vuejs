@@ -3,6 +3,8 @@ import AppBread from '../components/AppBread.vue';
 import DescriptionLeft from '../components/DescriptionLeft.vue';
 import DescriptionRight from '../components/DescriptionRight.vue';
 import AlbumNow from '../components/AlbumNow.vue';
+import CounterIcon from '../components/CounterIcon.vue';
+import StaffAbout from '../components/StaffAbout.vue';
 
 export default{
     name: "AppAbout",
@@ -10,7 +12,9 @@ export default{
         AppBread,
         DescriptionLeft,
         DescriptionRight,
-        AlbumNow
+        AlbumNow,
+        CounterIcon,
+        StaffAbout
   }
 }
 </script>
@@ -26,6 +30,12 @@ export default{
 
     <!-- Insserire App Paragrafo -->
     <DescriptionRight />
+
+    <!-- Counter -->
+    <CounterIcon />
+
+    <!-- Staff -->
+    <StaffAbout />
 </template>
 
 <style lang="scss" scoped>
