@@ -44,6 +44,7 @@ export default{
     img{
     max-height: 150px;
     margin-bottom: 20px;
+    filter: invert(1);
     }
 }
 

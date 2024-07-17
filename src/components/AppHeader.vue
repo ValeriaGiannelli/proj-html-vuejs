@@ -8,7 +8,6 @@ export default{
             router
         } 
     }
-
 }
 </script>
 
