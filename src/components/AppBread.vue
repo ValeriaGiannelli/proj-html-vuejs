@@ -10,13 +10,13 @@ export default{
 <template>
     <div class="my_container">
         <div class="padding container-fluid bg-dark d-flex justify-content-around ">
-            <di class="row">
+            <div class="row">
                 <div class="col">
                     <h1>{{info[0].namePath}}</h1>
-                    <a href="/">{{info[0].home}} / </a>
-                    <span>{{info[0].namePath}}</span>
+                    <a href="/">{{info[0].home}}</a>
+                    <span> / {{info[0].namePath}}</span>
                 </div>
-            </di>
+            </div>
         </div>
     </div>
 
@@ -27,6 +27,9 @@ export default{
 
 .my_container{
     color:$secondary;
+    a{
+        color:$secondary;
+    }
 }
 
 .padding{
