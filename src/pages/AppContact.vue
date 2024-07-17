@@ -118,6 +118,8 @@ export default{
         </div>
     </div>
 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79480.38794566938!2d-0.2533077801302908!3d51.499232593196666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2sLondon%20Eye!5e0!3m2!1sit!2sit!4v1721225215918!5m2!1sit!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 </template>
 
 <style lang="scss" scoped>
@@ -125,6 +127,7 @@ export default{
 .my_container{
     background-color: $bgcolor;
     padding-top:70px;
+    padding-bottom:70px;
     color: $secondary;
 }
 .form-control{
