@@ -5,7 +5,7 @@ export default{
 </script>
 
 <template>
-
+    <h1>pagina contact</h1>
 </template>
 
 <style scoped>
