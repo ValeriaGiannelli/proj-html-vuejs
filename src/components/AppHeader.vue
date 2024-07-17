@@ -112,7 +112,7 @@ a{
         filter: invert(1);
         &:hover{
             // capire che filtri fare
-            filter:sepia(1) saturate(10000%) hue-rotate(330deg);
+            filter:sepia(1) saturate(1000%) hue-rotate(330deg);
         }
     }
 }
