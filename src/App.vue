@@ -32,6 +32,7 @@ export default{
   <AppHeader/>
   <main>
     <!-- <AppHome /> -->
+    <!-- <AppContact /> -->
 
     <!-- DEBUG -->
     <!-- <AppContact /> -->

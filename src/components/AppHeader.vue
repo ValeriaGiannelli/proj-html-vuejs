@@ -57,6 +57,9 @@ export default{
                         <router-link class="nav-link" :to="route.path">{{ route.name }}</router-link>
                         <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> c'era classe "active" -->
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><img src="/assets/image (23).svg" alt=""></a>
+                    </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
@@ -76,11 +79,7 @@ export default{
                         <a class="nav-link" href="#">Link</a>
                     </li> -->
                 </ul>
-
-                <!-- <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> -->
+                    
             </div>            
         </div>
     </nav>
@@ -106,6 +105,16 @@ export default{
 
 .custom-shadow {
     box-shadow: 0px 5px 5px 0px rgba(255, 255, 255, 0.1);
+}
+
+a{
+    img{
+        filter: invert(1);
+        &:hover{
+            // capire che filtri fare
+            filter:sepia(1) saturate(10000%) hue-rotate(330deg);
+        }
+    }
 }
 
 
