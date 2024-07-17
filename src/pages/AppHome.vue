@@ -1,5 +1,6 @@
 <script>
 import AlbumNow from '../components/AlbumNow.vue';
+import AppCard from '../components/AppCard.vue';
 import CounterIcon from '../components/CounterIcon.vue';
 
 export default{
@@ -7,7 +8,40 @@ export default{
     components:{
         CounterIcon,
         AlbumNow,
+        AppCard
+    },
+    data(){
+        return{
+            imagesGallery:[
+                {
+                    url: 'gallery1.jpg',
+                    title: 'A ROLL AND BANG THE FLOOR'
+                },
+                {
+                    url: 'gallery2.jpg',
+                    title: 'YOUR MELODY TO OUR MUSIC'
+                },
+                {
+                    url: 'gallery3.jpg',
+                    title: 'TOUCHING HEAVEN ON FREQUENCY'
+                },
+                {
+                    url: 'gallery4.jpg',
+                    title: 'MUSIC MAKES STRONGE BEATS'
+                },
+                {
+                    url: 'gallery5.jpg',
+                    title: 'SOUND IS THE SPARK OF TIME'
+                },
+                {
+                    url: 'gallery6.jpg',
+                    title: 'MAKE YOUR NIGHT GROOVY'
+                },
+                
+            ]
+        }
     }
+
 }
 
 </script>
@@ -61,9 +95,10 @@ export default{
             </div>      
         </div>
     </div>
+<!-- Sezione new video -->
     <section>
         <div class="container-fluid">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center my_new_video">
                 <div class="col-9">
                     <img src="../../public/assets/image (22).svg" alt="">
                     <h2>NEW MUSIC VIDEO</h2>
@@ -71,7 +106,14 @@ export default{
             </div>
         </div>
     </section>
-       
+<!-- Sezione six card -->
+    <section>
+        <div class="container-fluid bg-black pt-5">
+            <div class="row">
+                <AppCard v-for="singleImage in imagesGallery" :img="singleImage.url" :imgTitle="singleImage.title"/>
+            </div>
+        </div>
+    </section>
     <CounterIcon/>
     <AlbumNow/>
 </template>
@@ -82,6 +124,9 @@ export default{
 .container-fluid{
     background-position: center;
     text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 
     h2{
         font-size: 4rem;
@@ -94,13 +139,11 @@ export default{
 
     .first_home{
         background-image: url(../../public/assets/home1.png);
-        background-repeat: no-repeat;
-        background-size: cover;
+        
     }
     .second_home{
         background-image: url(../../public/assets/home2.png);
-        background-repeat: no-repeat;
-        background-size: cover;
+        
     }
     h5{
         color: $primary;
@@ -132,5 +175,15 @@ export default{
         }
     }
 
+}
+
+.my_new_video{
+    background-image: url(../../public/assets/Video-1536x541.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img{
+        max-height: 150px;
+    }
 }
 </style>
