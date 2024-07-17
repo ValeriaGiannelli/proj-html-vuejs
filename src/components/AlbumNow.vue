@@ -11,7 +11,7 @@ export default{
             <div class="col">
                 <h5>INSTRUMENTAL ROCK</h5>
                 <h2>ALBUM OUT NOW</h2>
-                <button class="my_btn_read">READ MORE</button class="btn_read">
+                <button class="my_btn_read">READ MORE</button>
             </div>
         </div>
      </div>
