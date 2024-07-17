@@ -14,6 +14,12 @@ export default{
     data(){
         return {
             store,
+            infoBread: [
+                {
+                    "namePath": "Contact Us",
+                    "home":"Home"
+                }
+            ]
         }
     },
 }
@@ -21,7 +27,8 @@ export default{
 
 <template>
     <!-- da gestire in modo dinamico con props -->
-    <AppBread />
+    <AppBread :info="infoBread"/>
+    
     <!-- componente che sta creando Samuele -->
     <div class="my_container">
         <div class="container">
