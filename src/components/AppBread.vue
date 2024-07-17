@@ -1,21 +1,34 @@
 <script>
 export default{
-    name: 'AppBread'
+    name: 'AppBread',
+    props:{
+        info: Object,
+    }
 }
 </script>
 
 <template>
-    <div class="padding container-fluid bg-dark d-flex justify-content-around ">
-        <di class="row">
-            <div class="col">
-                <h1>ABOUT US</h1>
-                <span>Home/</span> <span>About Us</span>
-            </div>
-        </di>
+    <div class="my_container">
+        <div class="padding container-fluid bg-dark d-flex justify-content-around ">
+            <di class="row">
+                <div class="col">
+                    <h1>{{info[0].namePath}}</h1>
+                    <a href="/">{{info[0].home}} / </a>
+                    <span>{{info[0].namePath}}</span>
+                </div>
+            </di>
+        </div>
     </div>
+
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/styles/partials/variables' as *;
+
+.my_container{
+    color:$secondary;
+}
+
 .padding{
     padding: 150px;
 }
