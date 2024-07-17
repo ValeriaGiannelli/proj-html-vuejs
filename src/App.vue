@@ -23,7 +23,8 @@ export default{
 
   <AppHeader/>
   <main>
-    <AppHome />
+    <!-- <AppHome /> -->
+    <AppContact />
   </main>
 
     <!-- <h1>Ciao sono app</h1> -->
