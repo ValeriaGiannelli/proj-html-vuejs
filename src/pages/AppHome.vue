@@ -84,14 +84,14 @@ export default{
                 <div class="col">
                     <h5>INSTRUMENTAL ROCK</h5>
                     <h2>MUSIC IN THE SPIRT</h2>
-                    <button class="my_btn_read">READ MORE</button class="btn_read">
+                    <button class="my_btn_read">READ MORE</button>
                 </div>
             </div>
             <div class="row second_home d-none">
                 <div class="col">
                     <h5>INSTRUMENTAL ROCK</h5>
                     <h2>MUSIC IN THIS VIDEO</h2>
-                    <button class="my_btn_read">READ MORE</button class="btn_read">
+                    <button class="my_btn_read">READ MORE</button>
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@ export default{
             <div class="row">
                 <h5>WHO WE ARE</h5>
                 <h2>SENSE THE JAZZ</h2>
-                <AppCard v-for="singleImage in imagesGallery" :img="singleImage.url" :imgTitle="singleImage.title"/>
+                <AppCard v-for="(singleImage,i) in imagesGallery" :img="singleImage.url" :imgTitle="singleImage.title" :key="i"/>
             </div>
         </div>
     </section>
@@ -156,7 +156,7 @@ export default{
                     <h5>MUSIC BLOG</h5>
                     <h2>BEST MUSIC BLOG</h2>
                     <div class="slider_img">
-                        <AppCard v-for="singleBlog in eventImage" :img="singleBlog.url" :imgTitle="singleBlog.title"/>
+                        
                     </div>
                 </div>      
             </div>
