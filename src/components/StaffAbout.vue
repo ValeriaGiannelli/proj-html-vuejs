@@ -13,28 +13,32 @@ export default {
 
             <!-- 1 -->
             <div>
-                <img src="/img_about/about_team_01.jpg" alt="">
+                <div class="card_for"><img src="/img_about/about_team_01.jpg" alt=""></div>
                 <h5>LEO MASSI</h5>
                 <span>Musician</span>
             </div>
+            
+            
 
             <!-- 2 -->
             <div>
-                <img src="/img_about/about_team_02.jpg" alt="">
+
+                <div class="card_for"><img src="/img_about/about_team_02.jpg" alt=""></div>
                 <h5>ANNA PERRY</h5>
                 <span>Drums</span>
             </div>
 
             <!-- 3 -->
             <div>
-                <img src="/img_about/about_team_03.jpg" alt="">
+                <div class="card_for"><img src="/img_about/about_team_03.jpg" alt=""></div>
                 <h5>KAL PELU</h5>
                 <span>Cello</span>
             </div>
 
             <!-- 4 -->
             <div>
-                <img src="/img_about/about_team_04.jpg" alt="">
+                <div class="card_for"><img src="/img_about/about_team_04.jpg" alt=""></div>
+
                 <h5>SADA DESU</h5>
                 <span>Guitar</span>
             </div>
@@ -57,18 +61,28 @@ export default {
     align-items: center;
     justify-content: space-around;
     padding: 120px;
+    gap: 20px 
+}
+
+.card_for{
+    widows: 100%;
 }
 
 .cards div{
-    width: 300px;
-    height: 500px;
+    width: 100%;
     text-align: center;
+    overflow: hidden;
+}
 
-    img{
-        max-width: 100%;
+img{ 
+    width: 100%;
+    overflow: hidden;
+}
+
+    img:hover{
+        transform: scale(1.1);
         
     }
-}
 
 // Colors
 h4{
