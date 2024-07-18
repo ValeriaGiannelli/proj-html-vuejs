@@ -126,7 +126,6 @@ export default{
 @use '../assets/styles/partials/variables' as *;
 .my_container{
     background-color: $bgcolor;
-    padding-top:70px;
     padding-bottom:70px;
     color: $secondary;
 }
