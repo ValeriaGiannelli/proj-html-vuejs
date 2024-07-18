@@ -71,16 +71,18 @@ export default{
       } else {
         this.currentIndex = 0
         console.log(this.currentIndex)
-        this.translateX += (this.itemWidth + this.margin) * this.itemsPerPage;
+        this.translateX += this.carouselWidth + (this.itemWidth + this.margin);
       }
     },
     prevSlide() {
       if (this.currentIndex > 0) {
         this.currentIndex--;
         this.translateX += this.itemWidth + this.margin;
+        console.log(this.currentIndex)
       } else{
-        this.currentIndex = this.totalItems - this.itemsPerPage
-        this.translateX -= (this.itemWidth + this.margin) * this.itemsPerPage;
+        this.currentIndex = this.totalItems - this.itemsPerPage;
+        this.translateX -= this.carouselWidth + (this.itemWidth + this.margin);
+        console.log(this.currentIndex)
       }
     }
   }
