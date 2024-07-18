@@ -192,28 +192,27 @@ export default {
       </div>
     </div>
   </div>
+
   <!-- Sezione new video -->
   <section>
     <div class="container-fluid" id="sezione" @click="showVideo">
       <div class="row justify-content-center my_new_video">
         <div class="col-9">
-          <img id="player" src="../../public/assets/image (22).svg" alt="" />
+            <div class="my_class">
+                <!-- immagine del player -->
+                <img id="player" src="../../public/assets/image (22).svg" alt="" />
 
-          <div class="container-frame">
-            <div class="gray-box">
-                
+                <!-- container del video youtube -->
+                <div class="container-frame">
+                    <!-- sfondo del video -->
+                    <div class="gray-box"></div>
+                    <!-- importazione video -->
+                    <iframe width="1420" height="565" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                </div>  
+                <!-- titolo sezione -->
+                <h2>NEW MUSIC VIDEO</h2>
             </div>
-            <iframe
-                    width="1420"
-                    height="565"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                >
-                </iframe>
-          
-          </div>  
-            
-                
-          <h2>NEW MUSIC VIDEO</h2>
+         
         </div>
       </div>
     </div>
@@ -278,6 +277,7 @@ export default {
     }
 }
 
+// caption del carosello iniziale posizione centrale
 .carousel-caption{
         position:absolute;
         left:50%;
@@ -289,11 +289,13 @@ export default {
         transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
 
+// zoom in delle caption quando diventa attiva la slide
 .carousel-item.active .carousel-caption {
         opacity: 1;
         transform: translate(-50%, -50%) translateY(0) scale(1);
 }
 
+// posizione delle icone grandi sotto il primo carosello
 .my_icons_home{
     position: absolute;
     transform: translate(-50%,-50%);
@@ -331,6 +333,11 @@ h5 {
   h5 {
     margin-top: 300px;
   }
+}
+
+
+.my_class{
+    height: 635px;
 }
 
 // sfondo della sezione per il player del video
