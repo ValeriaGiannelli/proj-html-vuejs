@@ -200,17 +200,22 @@ export default {
         <div class="col-9">
             <div class="my_class">
                 <!-- immagine del player -->
-                <img id="player" src="../../public/assets/image (22).svg" alt="" />
-
+                <div class="my_icon_player">
+                    <svg id="player" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>      
+                </div>
+                <!-- titolo sezione -->
+                <h2>NEW MUSIC VIDEO</h2>
                 <!-- container del video youtube -->
                 <div class="container-frame">
                     <!-- sfondo del video -->
-                    <div class="gray-box"></div>
+                    <div class="gray-box">
+                        <svg class="thebase-svg-icon thebase-close-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Toggle Menu Close</title><path d="M5.293 6.707l5.293 5.293-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l5.293-5.293 5.293 5.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-5.293-5.293 5.293-5.293c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-5.293 5.293-5.293-5.293c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z"></path>
+                        </svg>
+                    </div>
                     <!-- importazione video -->
                     <iframe width="1420" height="565" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                 </div>  
-                <!-- titolo sezione -->
-                <h2>NEW MUSIC VIDEO</h2>
+                
             </div>
          
         </div>
@@ -335,9 +340,13 @@ h5 {
   }
 }
 
-
+// container del player e del titolo
 .my_class{
     height: 635px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 // sfondo della sezione per il player del video
@@ -347,8 +356,13 @@ h5 {
   background-size: cover;
 
 // icona del player
-  img {
-    max-height: 150px;
+  .my_icon_player{
+    width:100px;
+    color:orange;
+    border:5px solid orange;
+    border-radius: 50%;
+    padding: 30px;
+    padding-left: 40px;
   }
 }
 
@@ -372,6 +386,16 @@ iframe {
     position: fixed;
     top: 0; /* Correzione per coprire l'intera pagina */
     left: 0;
+    .thebase-svg-icon.thebase-close-svg{
+        position: absolute;
+        top: 110px;
+        right: 16px;
+        color: white;
+        z-index: 999;
+        &:hover{
+            cursor: pointer;
+        }
+    }
     
 }
 // Carosello Instragram
