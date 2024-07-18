@@ -51,7 +51,7 @@ export default{
             ],
       itemsPerPage: 3, //sostituire con il numero di immagini desiderato
       itemWidth: 280, // Larghezza di ciascuna immagine
-      margin: 20 // Margine delle immagini
+      margin: 30 // Margine delle immagini
     };
   },
   computed: {
@@ -123,6 +123,7 @@ export default{
 
   h5{
     padding-left: 10px;
+    padding-right: 10px;
   }
 
   span{
@@ -138,6 +139,7 @@ export default{
 .my_carousel {
   display: flex;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .my_carousel-inner {
@@ -147,7 +149,7 @@ export default{
 
 .carousel_my_item {
   flex: 0 0 auto;
-  max-width: calc(100% / 3);
+  max-width: calc(100% / 3 - 20px);
 }
 
 .my_carousel img {
