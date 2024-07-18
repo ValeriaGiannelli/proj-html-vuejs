@@ -49,8 +49,9 @@ export default{
                     text: "Characterised by its own beat patterns, the lyrics feature what is often extreme violence snd talk of criminal acts. As a result, there’s been"
                 },
             ],
+      
       itemsPerPage: 3, //sostituire con il numero di immagini desiderato
-      itemWidth: 280, // Larghezza di ciascuna immagine
+      itemWidth: 380, // Larghezza di ciascuna immagine
       margin: 30 // Margine delle immagini
     };
   },
@@ -59,29 +60,29 @@ export default{
       return this.eventImage.length;
     },
     carouselWidth() {
-      return (this.itemWidth + this.margin) * this.itemsPerPage;
+      return (this.$refs.widthImg1 + this.margin) * this.itemsPerPage;
     }
   },
   methods: {
     nextSlide() {
       if (this.currentIndex < this.totalItems - this.itemsPerPage) {
         this.currentIndex++;
-        this.translateX -= this.itemWidth + this.margin;
+        this.translateX -= this.$refs.widthImg1 + this.margin;
         console.log(this.currentIndex)
       } else {
         this.currentIndex = 0
         console.log(this.currentIndex)
-        this.translateX += this.carouselWidth + (this.itemWidth + this.margin);
+        this.translateX += this.carouselWidth + (this.$refs.widthImg1 + this.margin);
       }
     },
     prevSlide() {
       if (this.currentIndex > 0) {
         this.currentIndex--;
-        this.translateX += this.itemWidth + this.margin;
+        this.translateX += this.$refs.widthImg1 + this.margin;
         console.log(this.currentIndex)
       } else{
         this.currentIndex = this.totalItems - this.itemsPerPage;
-        this.translateX -= this.carouselWidth + (this.itemWidth + this.margin);
+        this.translateX -= this.carouselWidth + (this.$refs.widthImg1 + this.margin);
         console.log(this.currentIndex)
       }
     }
@@ -94,7 +95,7 @@ export default{
     <div class="my_carousel-container" :style="{ width: carouselWidth + 'px' }">
     <div class="my_carousel">
       <div class="my_carousel-inner" :style="{ transform: 'translateX(' + translateX + 'px)' }">
-        <div v-for="(image, index) in eventImage" :key="index" class="carousel_my_item">
+        <div v-for="(image, index) in eventImage" :key="index" class="carousel_my_item" ref="{{'widthImg' + index}}">
           <img :src="`../../public/assets/${image.url}`" alt="Carousel Image" />
           <h5>{{ image.title }}</h5>
           <span>{{ image.date }}</span>
@@ -153,7 +154,7 @@ export default{
 }
 
 .my_carousel img {
-  max-width: 280px;
+  max-width: 100%;
   height: auto;
   margin: 0 10px;
 }
