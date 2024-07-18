@@ -406,12 +406,14 @@ iframe {
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    
     &::-webkit-scrollbar{
         display: none;
     }
 
     .instragam_img{
     min-width: calc(100% / 8);
+    overflow: hidden;
     
         img:hover{
             transform: scale(1.1);
