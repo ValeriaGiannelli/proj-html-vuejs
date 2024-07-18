@@ -23,11 +23,14 @@ export default{
 .container-fluid{
     background-image: url(../../public/assets/cms_parallax.jpg);
     background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     // padding: 200px 0;
     &.my_padding{
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding-top: 450px;
+        padding-bottom: 450px;
     }
 
     h5{
