@@ -7,12 +7,30 @@ export default {
       number2: 0,
       number3: 0,
       number4: 0,
+      observer: null,
     };
   },
   mounted() {
-    this.incrementNumbers();
+    this.createObserver();
   },
   methods: {
+    createObserver() {
+      const options = {
+        root: null,
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      };
+
+      this.observer = new IntersectionObserver(this.handleIntersect, options);
+      this.observer.observe(this.$refs.myPadding);
+    },
+    handleIntersect(entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.incrementNumbers();
+          this.observer.disconnect(); // Stop observing once increment starts
+        }
+      });
+    },
     incrementNumbers() {
       this.incrementNumber("number1", 900, 3000);
       this.incrementNumber("number2", 400, 3000);
@@ -34,14 +52,11 @@ export default {
       }, 50);
     },
   },
-  mounted() {
-    this.incrementNumbers();
-  },
 };
 </script>
 
 <template>
-  <div class="container-fluid my_padding">
+  <div class="container-fluid my_padding" ref="myPadding">
     <div class="row">
       <div class="col">
         <img src="../../public/assets/image (13).svg" alt="" />
