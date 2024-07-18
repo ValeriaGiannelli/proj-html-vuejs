@@ -85,9 +85,12 @@ export default {
 <style lang="scss" scoped>
 .container-fluid {
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.98;
   background-image: url(../../public/assets/counter_parallax.jpg);
   background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   text-align: center;
   &.my_padding {
