@@ -3,36 +3,41 @@ export default{
     name: "CounterIcon",
     data(){
         return {
-            
-        }
+            number1: 0,
+            number2: 0,
+            number3: 0,
+            number4: 0
+        };
+    },
+    mounted() {
+        this.incrementNumbers();
     },
     methods: {
+            incrementNumbers() {
+                this.incrementNumber('number1', 900, 3000);
+                this.incrementNumber('number2', 400, 3000);
+                this.incrementNumber('number3', 800, 3000);
+                this.incrementNumber('number4', 1001, 3000);
+            },
+            incrementNumber(numberKey, finalValue, duration) {
+                let startValue = this[numberKey];
+                let increment = finalValue / (duration / 50); // aggiorna ogni 50ms
 
-        getCounters(){
-
-        // JavaScript code goes here
-        const counter = document.getElementById('counter');
-        const duration = 2000; // 2 secondi
-        let target = 900;
-        const interval = 10; // interval in milliseconds
-        const increment = target / (duration / interval); //Calcolo per arrivare a 900
-
-        let current = 0;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            counter.innerText = Math.round(current);
-            }, interval);
+            let interval = setInterval(() => {
+                startValue += increment;
+                if (startValue >= finalValue) {
+                this[numberKey] = finalValue;
+                clearInterval(interval);
+                } else {
+                this[numberKey] = Math.round(startValue);
+                }
+            }, 50);
         }
-        
-    },
+    },      
     mounted(){
-        // this.getCounters();
+       this.incrementNumbers();
     }
-}
+    }
 </script>
 
 <template>
@@ -40,23 +45,23 @@ export default{
         <div class="row">
             <div class="col">
                 <img src="../../public/assets/image (13).svg" alt="">
-                <span @click="getCounters" id="counter">0</span>
+                <span>{{ number1 }}</span>
                 <h3>CONCERTS</h3>
 
             </div>
             <div class="col">
                 <img src="../../public/assets/image (14).svg" alt="">
-                <span></span>
+                <span>{{ number2 }}</span>
                 <h3>HAPPY CLIENTS</h3>
             </div>
             <div class="col">
                 <img src="../../public/assets/image (15).svg" alt="">
-                <span>COUNTER</span>
+                <span>{{ number3 }}</span>
                 <h3>MUSIC AWARDS</h3>
             </div>
             <div class="col">
                 <img src="../../public/assets/image (16).svg" alt="">
-                <span>COUNTER</span>
+                <span>{{ number4 }}</span>
                 <h3>TOTAL SONGS</h3>
             </div>
         </div>
