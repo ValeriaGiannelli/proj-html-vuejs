@@ -58,6 +58,7 @@ export default{
                 <div class="carousel-item active">
                     <!-- prima immagine del carosello -->
                     <img src="/assets/home1.png" alt="">
+
                     <div class="carousel-caption d-none d-md-block">
                         <h5>INSTRUMENTAL ROCK</h5>
                         <h2>MUSIC IN THE SPIRT</h2>
@@ -69,9 +70,12 @@ export default{
                 <div class="carousel-item">
                     <img src="/assets/home2.png" alt="">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>INSTRUMENTAL ROCK</h5>
-                        <h2>MUSIC IN THE SPIRT</h2>
-                        <button class="my_btn_read">READ MORE</button>
+
+                        <!-- <div class="my_caption"> -->
+                            <h5>INSTRUMENTAL ROCK</h5>
+                            <h2>MUSIC IN THE SPIRT</h2>
+                            <button class="my_btn_read">READ MORE</button>
+                        <!-- </div>                         -->
                     </div>
                 </div>
             </div>
@@ -171,25 +175,29 @@ export default{
 
     .row{
         align-items: center;
-    }
-
-    .carousel-item.active{
-        position: relative;
-
-        .d-md-block {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-  
+    } 
 
     h5{
         color: $primary;
     }
 }
+
+.carousel-caption{
+        position:absolute;
+        // right:50%;
+        top:50%;
+        bottom:auto;
+        // transform: translate(50%, -50%);
+        opacity: 0;
+        transform: scale(0.5);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+.carousel-item.active .carousel-caption {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+}
+
 #position_icons{
     position: relative;
 
