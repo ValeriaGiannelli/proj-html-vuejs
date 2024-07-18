@@ -41,6 +41,18 @@ export default {
         },
       ],
       x: false,
+      instragamImg: [
+        "instagram_img1.jpg",
+        "instagram_img2.jpg",
+        "instagram_img3.jpg",
+        "instagram_img4.jpg",
+        "instagram_img5.jpg",
+        "instagram_img6.jpg",
+        "instagram_img7.jpg",
+        "instagram_img8.jpg",
+        "instagram_img9.jpg",
+        "instagram_img10.jpg"
+      ]
     };
   },
   methods: {
@@ -235,6 +247,15 @@ export default {
       </div>
     </div>
   </section>
+  <section>
+    <div class="container-fluid">
+        <div class="my_instagram_carosel">
+            <div v-for="img in instragamImg">
+                <img :src="`../../public/assets/${img}`" alt="">
+            </div>
+        </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -384,5 +405,14 @@ iframe {
     left: 0;
     
 }
+// Carosello Instragram
 
+.my_instagram_carosel{
+    display: flex;
+    overflow: auto;
+
+    // div{
+    //     flex-basis: calc(100% / 7);
+    // }
+}
 </style>
