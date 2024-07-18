@@ -168,11 +168,9 @@ export default{
 @use '../assets/styles/partials/variables' as*;
 
 .container-fluid{
-    background-position: center;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    
     color: white;
+    text-align: center;
 
     h2{
         font-size: 4rem;
@@ -185,10 +183,16 @@ export default{
 
     .first_home{
         background-image: url(../../public/assets/home1.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         
     }
     .second_home{
         background-image: url(../../public/assets/home2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         
     }
     h5{
