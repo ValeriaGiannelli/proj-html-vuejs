@@ -280,26 +280,18 @@ export default {
 
 .carousel-caption{
         position:absolute;
-        // right:50%;
+        left:50%;
         top:50%;
         bottom:auto;
-        // transform: translate(50%, -50%);
+        transform: translate(-50%, -50%);
         opacity: 0;
-        transform: scale(0.5);
+        transform: translate(-50%, -50%) translateY(50px) scale(0.5);
         transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
 
 .carousel-item.active .carousel-caption {
         opacity: 1;
-        transform: translateY(0) scale(1);
-}
-
-#position_icons{
-    position: relative;
-
-    h5{
-        margin-top: 300px;
-    }
+        transform: translate(-50%, -50%) translateY(0) scale(1);
 }
 
 .my_icons_home{
@@ -328,63 +320,32 @@ export default {
     margin-bottom: 150px;
 }
 
-.my_new_video{
-    background-image: url(../../public/assets/Video-1536x541.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .second_home {
-    background-image: url(../../public/assets/home2.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  h5 {
+h5 {
     color: $primary;
-  }
+}
 
+// posizione delle icone ideas / studio / covers
 #position_icons {
   position: relative;
 
   h5 {
-    margin-top: 100px;
+    margin-top: 300px;
   }
 }
 
-.my_icons_home {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 0;
-  left: 50%;
-  justify-content: space-around;
-  width: 100%;
-
-  .col-3 {
-    background-color: #121212;
-    padding: 30px;
-    text-align: center;
-    img {
-      max-height: 150px;
-      filter: invert(1);
-    }
-  }
-}
-
+// sfondo della sezione per il player del video
 .my_new_video {
   background-image: url(../../public/assets/Video-1536x541.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 
+// icona del player
   img {
     max-height: 150px;
   }
 }
 
-.slider_img {
-  display: flex;
-  justify-content: flex-start;
-}
-
+// visualizzazione del video
 iframe {
   display: none;
   z-index: 900;
@@ -394,6 +355,7 @@ iframe {
   position: fixed;
 }
 
+// parte di div che serve da sfondo per il video
 .gray-box{
     display: none;
     width: 100%;
