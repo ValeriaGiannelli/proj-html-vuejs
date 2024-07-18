@@ -1,6 +1,7 @@
 <script>
 import AlbumNow from "../components/AlbumNow.vue";
 import AppCard from "../components/AppCard.vue";
+import AppCarosel from "../components/AppCarosel.vue";
 import CounterIcon from "../components/CounterIcon.vue";
 
 export default {
@@ -9,6 +10,7 @@ export default {
     CounterIcon,
     AlbumNow,
     AppCard,
+    AppCarosel
   },
   data() {
     return {
@@ -36,36 +38,6 @@ export default {
         {
           url: "gallery6.jpg",
           title: "MAKE YOUR NIGHT GROOVY",
-        },
-      ],
-      eventImage: [
-        {
-          url: "hip_hop_wired_to_dance_make.jpg",
-          title: "HIP HOP WIRED TO DANCE MAKE",
-        },
-        {
-          url: "music_business-worldwide.jpg",
-          title: "MUSIC BUSINESS WORLDWIDE",
-        },
-        {
-          url: "giveaways_rock.jpg",
-          title: "GIVEAWEYS ROCK TO ALL",
-        },
-        {
-          url: "drowned_in_sound_feel_joy.jpg",
-          title: "DROWEND IN SOUND FEEL JOY",
-        },
-        {
-          url: "dancing_astronaut_bounce_ipsum.jpg",
-          title: "DANCING ASTROUNAUT BOUNCE IPSUM",
-        },
-        {
-          url: "consequence_of_sound_make_us.jpg",
-          title: "CONSEQUENCE OF SOUND MAKE US",
-        },
-        {
-          url: "artist_development_and_production.jpg",
-          title: "ARTIST DEVELOPMENT AND PRODUCTION",
         },
       ],
       x: false,
@@ -258,7 +230,7 @@ export default {
         <div class="col-9">
           <h5>MUSIC BLOG</h5>
           <h2>BEST MUSIC BLOG</h2>
-          <div class="slider_img"></div>
+          <AppCarosel />
         </div>
       </div>
     </div>
