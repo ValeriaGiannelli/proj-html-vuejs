@@ -23,4 +23,9 @@ ul {
     background-color: black;
     border: 1px solid $primary;
     color: $secondary;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $primary;
+    }
 }
