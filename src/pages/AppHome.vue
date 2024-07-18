@@ -176,7 +176,7 @@ export default {
           Sounds And Ideas Between The Local, National And International Music
           Communities.
         </p>
-        <button class="my_btn_read">READ MORE</button>
+        <button class="my_btn_read my_btn_jazz">READ MORE</button>
       </div>
     </div>
   </div>
