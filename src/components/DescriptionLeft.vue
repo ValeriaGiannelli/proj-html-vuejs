@@ -8,11 +8,11 @@ export default{
     <div class="container-fluid bg-black p-5">
 
         <!-- Description  -->
-        <div class="padding row d-flex justify-content-around align-items-end">
-            <div class="col margin margin-primary text-danger">
+        <div class="padding row d-flex justify-content-around">
+            <div class="col margin margin-primary">
 
                 <!-- Span -->
-                <h3>WHO WE ARE</h3>
+                <h6>WHO WE ARE</h6>
                 <h2>SENSE THE JAZZ</h2>
 
                 <!-- Paragraph -->
@@ -35,19 +35,22 @@ export default{
 @use '../assets/styles/partials/variables' as *;
 
 // Css for colors
-h3{
-    color: $primary
+h6{
+    color: $primary;
+    margin-top: 50px;
 }
 
 h2{
-    font-size: 45px;
+    font-size: 55px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     color: $secondary
 }
 
 // Indentation
 p{
-    max-width: 50%;
-    font-size: 15px;
+    max-width: 90%;
+    font-size: 18px;
     margin: 25px 0;
     color: $secondary
 }
@@ -56,10 +59,6 @@ img{
     max-width: 650px;
 }
 
-.padding{
-    padding: 100px 5%;
-
-}
 
 button.my_btn_read{
     padding: 10px 45px

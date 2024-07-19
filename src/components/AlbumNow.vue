@@ -34,11 +34,18 @@ export default{
     }
 
     h5{
+        font-size: 30px;
         color: $primary;
     }
     h2{
-        font-size: 5rem;
+        font-size: 6.5rem;
         margin: 10px auto;
     }
+}
+
+.my_btn_read{
+    padding: 10px 45px;
+    background: rgba($color: #000000, $alpha: 0);
+    transition: 0.5s;
 }
 </style>

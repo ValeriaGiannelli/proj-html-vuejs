@@ -16,7 +16,7 @@ export default{
             store,
             infoBread: [
                 {
-                    "namePath": "Contact Us",
+                    "namePath": "CONTACT US",
                     "home":"Home"
                 }
             ]
