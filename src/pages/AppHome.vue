@@ -290,7 +290,7 @@ export default {
       <div class="col-9">
         <h5>WHO WE ARE</h5>
         <h2>SENSE THE JAZZ</h2>
-        <p>
+        <p class="description_jazz">
           The Story Of Jazz And Blues Society Is The Story Of Determination,
           Passion, Idealism, Community, And Of Course, Music. Founded In 1985
           And Incorporated In 1986, As A Community Based, Not-For-Profit,
@@ -526,6 +526,7 @@ export default {
     }
 }
 
+// animazione del cerchio delle icone
 @keyframes fade-out {
   0% {
     transform: scale(1);
@@ -548,6 +549,13 @@ export default {
 
 h5 {
     color: $primary;
+}
+
+.description_jazz{
+  font-size: 25px;
+  margin: 40px 0;
+  letter-spacing: 0.1em;
+  font-weight: lighter;
 }
 
 // posizione delle icone ideas / studio / covers
