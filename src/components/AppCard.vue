@@ -10,7 +10,10 @@ export default{
 
 <template>
     <div class="wrapper_card">
-        <img :src="`../../public/assets/${img}`" alt="">
+        <div>
+            <img :src="`../../public/assets/${img}`" alt="">
+        </div>
+        
         <span class="title">{{ imgTitle }}</span>
         <div class="social_stream">
             <span>Stream On: </span>
@@ -30,6 +33,7 @@ export default{
 .wrapper_card{
     flex-basis: calc(100% / 3);
     margin: 30px auto;
+    overflow: hidden;
 
     // Titols of Cards
     .title{
@@ -48,6 +52,23 @@ export default{
                 cursor: pointer;
             }
         }
+    }
+
+    // Gestione dell'img Hover
+    img{
+        
+        transition: 1s;
+        width: 100%;
+        overflow: hidden;
+        &:hover {
+            
+            transform: scale(1.1);
+        }
+    }
+
+    >div{
+        width: 100%;
+        overflow: hidden;
     }
 }
 
