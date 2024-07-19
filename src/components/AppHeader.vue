@@ -1,5 +1,4 @@
 <script>
-import { router } from '../router';
 
 export default{
     name: "AppHeader",
@@ -47,7 +46,7 @@ export default{
         <div class="container-fluid">
             <!-- logo -->
             <a class="navbar-brand" href="/">
-                <img src="/assets/Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="/assets/Logo.png" alt="Logo" width="30" height="50" class="d-inline-block align-text-top">
             </a>
             
             <!-- menu di navigazione -->
@@ -93,10 +92,15 @@ export default{
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 
+.navbar-nav{
+    gap:25px;
+}
+
 .navbar-nav .nav-link{
     color: $secondary;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 25px;
 }
 .navbar-nav:hover, .nav-link:hover{
     color:orange;
@@ -108,6 +112,7 @@ export default{
 
 .custom-shadow {
     box-shadow: 0px 5px 5px 0px rgba(255, 255, 255, 0.1);
+    height:140px;
 }
 
 .thebase-svg-icon.thebase-search-svg{
