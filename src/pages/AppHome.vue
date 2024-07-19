@@ -88,13 +88,92 @@ export default {
       return x;
     },
   },
+  mounted() {
+    const carousel = this.$refs.carousel;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const mouseDownHandler = (event) => {
+      isDown = true;
+      carousel.classList.add('active');
+      startX = event.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    };
+
+    const mouseLeaveHandler = () => {
+      if (isDown) {
+        isDown = false;
+        carousel.classList.remove('active');
+      }
+    };
+
+    const mouseUpHandler = () => {
+      if (isDown) {
+        isDown = false;
+        carousel.classList.remove('active');
+      }
+    };
+
+    const mouseMoveHandler = (event) => {
+      if (!isDown) return;
+      event.preventDefault();
+      const x = event.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2; // Velocità di scorrimento
+      carousel.scrollLeft = scrollLeft - walk;
+    };
+
+    // Aggiungi eventi di mouse
+    carousel.addEventListener('mousedown', mouseDownHandler);
+    carousel.addEventListener('mouseleave', mouseLeaveHandler);
+    carousel.addEventListener('mouseup', mouseUpHandler);
+    carousel.addEventListener('mousemove', mouseMoveHandler);
+    // Aggiungi eventi touch
+    carousel.addEventListener('touchstart', (event) => {
+      isDown = true;
+      startX = event.touches[0].pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('touchend', () => {
+      isDown = false;
+    });
+
+    carousel.addEventListener('touchmove', (event) => {
+      if (!isDown) return;
+      event.preventDefault();
+      const x = event.touches[0].pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2;
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Gestione del tocco del mouse per dispositivi touch
+    carousel.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse') {
+        mouseDownHandler(event);
+      }
+    });
+    
+    carousel.addEventListener('pointerup', (event) => {
+      if (event.pointerType === 'mouse') {
+        mouseUpHandler(event);
+      }
+    });
+
+    carousel.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'mouse') {
+        mouseMoveHandler(event);
+      }
+    });
+  }
 };
 </script>
 
 <template>
   <section>
     <!-- Prima sezione con cambio immagine home -->
-        <div id="carouselExampleCaptions" class="carousel slide carousel-fade">
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
 
                 <!-- elemento iniziale attivo -->
@@ -105,8 +184,12 @@ export default {
                     <div class="carousel-caption d-none d-md-block">
                         <h5>INSTRUMENTAL ROCK</h5>
                         <h2 class="spirit">MUSIC IN THE VIDEO</h2>
-                        <button class="my_btn_read">READ MORE</button>
+                        <div class="button-container">
+                          <button class="my_btn_read">READ MORE</button>
+                        </div>
                     </div>
+
+
                 </div>
 
                 <!-- secondo elemento -->
@@ -114,12 +197,14 @@ export default {
                     <img src="/assets/home2.png" alt="">
                     <div class="carousel-caption d-none d-md-block">
 
-                        <!-- <div class="my_caption"> -->
                             <h5>INSTRUMENTAL ROCK</h5>
                             <h2 class="spirit">MUSIC OF THE SPIRIT</h2>
-                            <button class="my_btn_read">READ MORE</button>
-                        <!-- </div>                         -->
+                            <div class="button-container">
+                              <button class="my_btn_read">READ MORE</button>
                     </div>
+                    </div>
+
+
                 </div>
             </div>
 
@@ -148,7 +233,7 @@ export default {
 
   <!-- Sezione tre icons e sense the jazz -->
   <div class="container-fluid" id="position_icons">
-    <div class="row my_icons_home">
+    <div class="row jusitfy-contante-around my_icons_home">
 
      <!-- icona -->
       <div class="col-3 d-flex justify-content-center my_bg_dark">
@@ -277,12 +362,13 @@ export default {
       </div>
     </div>
   </section>
-  <div class="bg-black text-white">
+  <div class="container-fluid bg-black text-white overflow_hidden">
     <AppCarosel />
   </div>
   <section>
-        <div class="my_instagram_carosel">
-            <div class="instragam_img" v-for="(img,i) in instragamImg" :key="i">
+        <div class="my_instagram_carosel" ref="carousel">
+            <div class="instragam_img" v-for="(img,i) in instragamImg" :key="i"  @mousedown.stop.prevent
+            @touchstart.stop.prevent>
                 <img :src="`../../public/assets/${img}`" alt="">
             </div>
         </div>
@@ -291,6 +377,10 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/styles/partials/variables" as *;
+
+// .overflow_hidden{
+//   overflow-x: hidden;
+// }
 
 .container-fluid {
   color: white;
@@ -314,18 +404,43 @@ export default {
         position:absolute;
         width: 100%;
         left:50%;
-        top:50%;
+        top:42%;
         bottom:auto;
         transform: translate(-50%, -50%);
         opacity: 0;
         transform: translate(-50%, -50%) translateY(50px) scale(0.5);
-        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        transition: opacity 0s ease-out, transform 0s ease-out;
+
+        h5{
+          font-size: 30px;
+          transform: translate(0, -50%) translateY(50px) scale(0.5);
+          transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        h2{
+          font-size: 100px;
+          margin: 40px 0;
+          opacity: 0;
+          transform: translate(0, -50%) translateY(50px) scale(0.5);
+          transition: opacity 3.5s ease-out, transform 2s ease-out;
+        }
     }
 
 // zoom in delle caption quando diventa attiva la slide
 .carousel-item.active .carousel-caption {
-        opacity: 1;
-        transform: translate(-50%, -50%) translateY(0) scale(1);
+
+  h5{
+    opacity: 1;
+    transform: translate(0, 0) translateY(0) scale(1);
+  }
+  
+  h2{
+    opacity: 1;
+    transform:  translate(0, 0) translateY(0) scale(1);
+  }
+
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0) scale(1);
 }
 
 // posizione delle icone grandi sotto il primo carosello
@@ -350,7 +465,6 @@ export default {
         flex-direction: column;
         align-items: center;
         width:80%;
-        margin: 50px;
         // all'over della card diventa bianco
         &:hover .animation .pulsating-circle{
           display: block;
@@ -378,7 +492,7 @@ export default {
           }
 
           svg{
-            max-height: 150px;
+            max-height: 130px;
             fill: white;
             z-index: 1;
             &:hover {
@@ -390,8 +504,8 @@ export default {
           .pulsating-circle{
             display:none;
             position:absolute;
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
           
             // box-shadow: ;
@@ -418,7 +532,7 @@ export default {
     opacity: 1;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.4);
     opacity: 0;
   }
   100% {
@@ -510,18 +624,27 @@ iframe {
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    cursor: grab;
     
     &::-webkit-scrollbar{
         display: none;
+    }
+    .my_instagram_carosel.active {
+      cursor: grabbing;
     }
 
     .instragam_img{
     min-width: calc(100% / 8);
     overflow: hidden;
     
-        img:hover{
+    .instragam_img img {
+      transition: transform 0.2s ease;
+
+      &:hover{
             transform: scale(1.1);
         }
+    }
+
     }
 }
 

@@ -13,6 +13,10 @@ img {
 
 a {
     text-decoration: none;
+    color:$secondary;
+    &:hover{
+        color:$primary;
+    }
 }
 
 ul {
@@ -21,14 +25,21 @@ ul {
 
 .my_btn_read {
     padding: 10px 45px;
-    background-color: black;
+    background-color: transparent;
     border: 1px solid $primary;
     color: $secondary;
-    transition: s;
+    transition: 0.5s;
    
 
     &:hover {
         cursor: pointer;
         background-color: $primary;
     }
+}
+
+.form-control{
+    border-radius: 0;
+    background-color: black;
+    color: $secondary;
+    border-color: gray;
 }

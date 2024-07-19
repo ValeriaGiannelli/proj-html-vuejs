@@ -71,7 +71,9 @@ export default{
 
                 <!-- Voice -->
                 <ul>
-                    <li v-for="(info,index) in information" :key="index">{{ info }}</li>
+                    <li v-for="(info,index) in information" :key="index">
+                        <a href="#">{{ info }}</a>
+                    </li>
                 </ul>
             </div>
 
@@ -83,7 +85,9 @@ export default{
 
                 <!-- Voice -->
                 <ul>
-                    <li v-for="(sup,index) in support" :key="index">{{ sup }}</li>
+                    <li v-for="(sup,index) in support" :key="index">
+                        <a href="">{{ sup }}</a>
+                    </li>
                 </ul>
             </div>
 
@@ -105,10 +109,9 @@ export default{
                 </div>
 
                 <div>
-                    <button>SEND MESSAGE</button>
+                    <button class="my_btn_read">SEND MESSAGE</button>
                 </div>
 
-                <span id="counter">0</span>
             </div>
         </div>
 
@@ -136,18 +139,19 @@ ul {
 
     li{
         max-width: 200px;
+        margin-bottom: 10px;
     }
 }
 
+h4{
+    margin-bottom: 30px;
+}
 
 // Button style
 button{
     // Button Settings
     font-size: 12px;
     padding: 7px 25px;
-    border-color: $primary;
-    color: $secondary;
-    background-color: $bgcolor;
 }
 
 .border_color{
