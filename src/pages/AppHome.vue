@@ -277,7 +277,7 @@ export default {
       </div>
     </div>
   </section>
-  <div class="bg-black text-white">
+  <div class="container-fluid bg-black text-white overflow_hidden">
     <AppCarosel />
   </div>
   <section>
@@ -291,6 +291,10 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/styles/partials/variables" as *;
+
+.overflow_hidden{
+  overflow-x: hidden;
+}
 
 .container-fluid {
   color: white;

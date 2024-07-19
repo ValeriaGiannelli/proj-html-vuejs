@@ -50,9 +50,7 @@ export default{
                     text: "Characterised by its own beat patterns, the lyrics feature what is often extreme violence snd talk of criminal acts. As a result, there’s been"
                 },
             ],
-      
       itemsPerPage: 3, //sostituire con il numero di immagini desiderato
-      // itemWidth: 380, // Larghezza di ciascuna immagine
       margin: 30 // Margine delle immagini
     };
   },
@@ -65,8 +63,17 @@ export default{
     }
   },
   methods: {
+    updateImgPage(){
+        if (window.innerWidth >= 1050) {
+            this.itemsPerPage = 3;
+          } else if (window.innerWidth >= 668) {
+            this.itemsPerPage = 2;
+          } else {
+            this.itemsPerPage = 1;
+          }
+        },
     nextSlide() {
-      console.log("hai cliccato", this.$refs.widthImg[0].clientWidth)
+      console.log("hai cliccato", this.itemsPerPage)
       if (this.currentIndex < this.totalItems - this.itemsPerPage) {
         this.currentIndex++;
         this.translateX -= this.$refs.widthImg[0].clientWidth;
@@ -91,6 +98,11 @@ export default{
   },
   mounted(){
     this.isMounted = true;
+    this.updateImgPage(); // Attuale larghezza
+    window.addEventListener('resize', this.updateImgPage); // Ascolto per il ridimensionamento della finestra browser
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.updateImgPage); // Pulita dell'addlistener
   }
 };
 
@@ -173,7 +185,7 @@ export default{
 .my_btn_prev_next{
   display: flex;
   justify-content: space-between;
-  width: 980px;
+  width: 100%;
   z-index: 1000;
   position: absolute;
   top: 50%;
