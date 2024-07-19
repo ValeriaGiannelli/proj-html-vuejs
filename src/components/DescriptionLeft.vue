@@ -23,8 +23,10 @@ export default{
 
 
 
-            <div class="col margin margin-primary text-danger d-flex justify-content-around">
-                <img src="/img_about/about_img.jpg" alt="debug">
+            <div class="col margin margin-primary text-danger d-flex justify-content-around" >
+                <div id="sense_effect">
+                    <img src="/img_about/about_img.jpg" alt="debug">
+                </div>  
             </div>
         </div>
     </div>
@@ -62,5 +64,67 @@ img{
 
 button.my_btn_read{
     padding: 10px 45px
+}
+#sense_effect{
+    position: relative;
+}
+
+#sense_effect::before{
+    content: "";
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+    transition: all 0.6s ease-in-out;
+    z-index: 10;
+}
+
+#sense_effect::after{
+    content: "";
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(180deg);
+    transition: all 0.6s ease-in-out;
+    z-index: 10;
+}
+#sense_effect:hover::before,
+#sense_effect:hover::after{
+    
+    animation: hover_effect 1s;
+    animation-fill-mode: forwards,
+}
+
+#sense_effect:not(hover)::before,
+#sense_effect:not(hover)::after{
+    
+    animation: not_hover_effect 1s;
+    animation-fill-mode: forwards,
+}
+
+@keyframes hover_effect {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        transform: rotate(0);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes not_hover_effect {
+    0%{
+        transform: rotate(0);
+        width: 100%;
+        height: 100%;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
 }
 </style>

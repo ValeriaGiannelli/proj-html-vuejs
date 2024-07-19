@@ -156,6 +156,7 @@ button{
 
 .border_color{
     border-top: 1px solid #ffffff;
+    
 }
 
 span{

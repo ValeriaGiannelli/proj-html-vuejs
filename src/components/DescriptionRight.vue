@@ -117,7 +117,10 @@ export default {
 .accordion-item{
     border: none;
     border-bottom: 1px solid rgba(1, 1, 1, 0.1);
-    
+}
+
+.accordion-body{
+    color: lightgrey;
 }
 
 .accordion-button:not(.collapsed){
