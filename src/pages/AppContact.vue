@@ -148,6 +148,11 @@ h2{
     font-size: 3rem;
 }
 
+h5{
+    color: $primary;
+    font-size: 16px;
+}
+
 p{
     color: gray;
 }

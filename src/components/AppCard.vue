@@ -11,7 +11,7 @@ export default{
 <template>
     <div class="wrapper_card">
         <img :src="`../../public/assets/${img}`" alt="">
-        <span>{{ imgTitle }}</span>
+        <span class="title">{{ imgTitle }}</span>
         <div class="social_stream">
             <span>Stream On: </span>
             <i class="fa-brands fa-spotify"></i>
@@ -30,6 +30,13 @@ export default{
 .wrapper_card{
     flex-basis: calc(100% / 3);
     margin: 30px auto;
+
+    // Titols of Cards
+    .title{
+        display: block;
+        font-size: 25px;
+        margin: 10px;
+    }
 
     .social_stream{
         i{

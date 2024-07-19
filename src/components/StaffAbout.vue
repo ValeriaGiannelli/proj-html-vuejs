@@ -60,12 +60,13 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 120px;
+    padding: 35px;
     gap: 20px 
 }
 
 .card_for{
-    widows: 100%;
+    margin-bottom: 20px;
+    
 }
 
 .cards div{
@@ -76,6 +77,7 @@ export default {
 
 img{ 
     width: 100%;
+    transition: 1s;
     overflow: hidden;
 }
 
@@ -87,9 +89,12 @@ img{
 // Colors
 h4{
     color: $primary;
+    font-size: 18px;
+    margin: 20px;
 }
 
 h2{
     color: $secondary;
+    font-size: 55px;
 }
 </style>
