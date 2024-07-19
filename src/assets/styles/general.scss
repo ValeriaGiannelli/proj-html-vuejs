@@ -13,6 +13,10 @@ img {
 
 a {
     text-decoration: none;
+    color:$secondary;
+    &:hover{
+        color:$primary;
+    }
 }
 
 ul {
@@ -31,4 +35,11 @@ ul {
         cursor: pointer;
         background-color: $primary;
     }
+}
+
+.form-control{
+    border-radius: 0;
+    background-color: black;
+    color: $secondary;
+    border-color: gray;
 }
