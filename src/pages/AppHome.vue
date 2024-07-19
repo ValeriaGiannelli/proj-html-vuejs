@@ -184,8 +184,12 @@ export default {
                     <div class="carousel-caption d-none d-md-block">
                         <h5>INSTRUMENTAL ROCK</h5>
                         <h2 class="spirit">MUSIC IN THE VIDEO</h2>
-                        <button class="my_btn_read">READ MORE</button>
+                        <div class="button-container">
+                          <button class="my_btn_read">READ MORE</button>
+                        </div>
                     </div>
+
+
                 </div>
 
                 <!-- secondo elemento -->
@@ -193,12 +197,14 @@ export default {
                     <img src="/assets/home2.png" alt="">
                     <div class="carousel-caption d-none d-md-block">
 
-                        <!-- <div class="my_caption"> -->
                             <h5>INSTRUMENTAL ROCK</h5>
                             <h2 class="spirit">MUSIC OF THE SPIRIT</h2>
-                            <button class="my_btn_read">READ MORE</button>
-                        <!-- </div>                         -->
+                            <div class="button-container">
+                              <button class="my_btn_read">READ MORE</button>
                     </div>
+                    </div>
+
+
                 </div>
             </div>
 
@@ -403,13 +409,38 @@ export default {
         transform: translate(-50%, -50%);
         opacity: 0;
         transform: translate(-50%, -50%) translateY(50px) scale(0.5);
-        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        transition: opacity 0s ease-out, transform 0s ease-out;
+
+        h5{
+          font-size: 30px;
+          transform: translate(0, -50%) translateY(50px) scale(0.5);
+          transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        h2{
+          font-size: 100px;
+          margin: 40px 0;
+          opacity: 0;
+          transform: translate(0, -50%) translateY(50px) scale(0.5);
+          transition: opacity 3.5s ease-out, transform 2s ease-out;
+        }
     }
 
 // zoom in delle caption quando diventa attiva la slide
 .carousel-item.active .carousel-caption {
-        opacity: 1;
-        transform: translate(-50%, -50%) translateY(0) scale(1);
+
+  h5{
+    opacity: 1;
+    transform: translate(0, 0) translateY(0) scale(1);
+  }
+  
+  h2{
+    opacity: 1;
+    transform:  translate(0, 0) translateY(0) scale(1);
+  }
+
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0) scale(1);
 }
 
 // posizione delle icone grandi sotto il primo carosello
