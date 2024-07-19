@@ -117,7 +117,7 @@ export default{
           <div class="my_div">
             <img :src="`../../public/assets/${image.url}`" alt="Carousel Image" />
             <h5>{{ image.title }}</h5>
-            <span>{{ image.date }}</span>
+            <span> <i class="fa-solid fa-calendar-days"></i> {{ image.date }}</span>
             <p>{{ image.text }}</p>
           </div>
         </div>
