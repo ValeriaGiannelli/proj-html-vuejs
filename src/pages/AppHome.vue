@@ -94,7 +94,7 @@ export default {
 <template>
   <section>
     <!-- Prima sezione con cambio immagine home -->
-        <div id="carouselExampleCaptions" class="carousel slide carousel-fade">
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
 
                 <!-- elemento iniziale attivo -->
