@@ -185,7 +185,7 @@ export default{
 .my_btn_prev_next{
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   z-index: 1000;
   position: absolute;
   top: 50%;

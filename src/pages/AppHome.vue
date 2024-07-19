@@ -88,6 +88,85 @@ export default {
       return x;
     },
   },
+  mounted() {
+    const carousel = this.$refs.carousel;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const mouseDownHandler = (event) => {
+      isDown = true;
+      carousel.classList.add('active');
+      startX = event.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    };
+
+    const mouseLeaveHandler = () => {
+      if (isDown) {
+        isDown = false;
+        carousel.classList.remove('active');
+      }
+    };
+
+    const mouseUpHandler = () => {
+      if (isDown) {
+        isDown = false;
+        carousel.classList.remove('active');
+      }
+    };
+
+    const mouseMoveHandler = (event) => {
+      if (!isDown) return;
+      event.preventDefault();
+      const x = event.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2; // Velocità di scorrimento
+      carousel.scrollLeft = scrollLeft - walk;
+    };
+
+    // Aggiungi eventi di mouse
+    carousel.addEventListener('mousedown', mouseDownHandler);
+    carousel.addEventListener('mouseleave', mouseLeaveHandler);
+    carousel.addEventListener('mouseup', mouseUpHandler);
+    carousel.addEventListener('mousemove', mouseMoveHandler);
+    // Aggiungi eventi touch
+    carousel.addEventListener('touchstart', (event) => {
+      isDown = true;
+      startX = event.touches[0].pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('touchend', () => {
+      isDown = false;
+    });
+
+    carousel.addEventListener('touchmove', (event) => {
+      if (!isDown) return;
+      event.preventDefault();
+      const x = event.touches[0].pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2;
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Gestione del tocco del mouse per dispositivi touch
+    carousel.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse') {
+        mouseDownHandler(event);
+      }
+    });
+    
+    carousel.addEventListener('pointerup', (event) => {
+      if (event.pointerType === 'mouse') {
+        mouseUpHandler(event);
+      }
+    });
+
+    carousel.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'mouse') {
+        mouseMoveHandler(event);
+      }
+    });
+  }
 };
 </script>
 
@@ -281,8 +360,9 @@ export default {
     <AppCarosel />
   </div>
   <section>
-        <div class="my_instagram_carosel">
-            <div class="instragam_img" v-for="(img,i) in instragamImg" :key="i">
+        <div class="my_instagram_carosel" ref="carousel">
+            <div class="instragam_img" v-for="(img,i) in instragamImg" :key="i"  @mousedown.stop.prevent
+            @touchstart.stop.prevent>
                 <img :src="`../../public/assets/${img}`" alt="">
             </div>
         </div>
@@ -292,9 +372,9 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/styles/partials/variables" as *;
 
-.overflow_hidden{
-  overflow-x: hidden;
-}
+// .overflow_hidden{
+//   overflow-x: hidden;
+// }
 
 .container-fluid {
   color: white;
@@ -513,18 +593,27 @@ iframe {
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    cursor: grab;
     
     &::-webkit-scrollbar{
         display: none;
+    }
+    .my_instagram_carosel.active {
+      cursor: grabbing;
     }
 
     .instragam_img{
     min-width: calc(100% / 8);
     overflow: hidden;
     
-        img:hover{
+    .instragam_img img {
+      transition: transform 0.2s ease;
+
+      &:hover{
             transform: scale(1.1);
         }
+    }
+
     }
 }
 
