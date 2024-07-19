@@ -21,10 +21,10 @@ ul {
 
 .my_btn_read {
     padding: 10px 45px;
-    background-color: black;
+    background-color: transparent;
     border: 1px solid $primary;
     color: $secondary;
-    transition: s;
+    transition: 0.5s;
    
 
     &:hover {
