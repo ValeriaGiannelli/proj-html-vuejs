@@ -32,10 +32,10 @@ export default {
       });
     },
     incrementNumbers() {
-      this.incrementNumber("number1", 900, 3000);
-      this.incrementNumber("number2", 400, 3000);
-      this.incrementNumber("number3", 800, 3000);
-      this.incrementNumber("number4", 1001, 3000);
+      this.incrementNumber("number1", 900, 2000);
+      this.incrementNumber("number2", 400, 2000);
+      this.incrementNumber("number3", 800, 2000);
+      this.incrementNumber("number4", 1001, 2000);
     },
     incrementNumber(numberKey, finalValue, duration) {
       let startValue = this[numberKey];
@@ -102,6 +102,10 @@ export default {
     max-height: 75px;
     margin-bottom: 20px;
     filter: invert(1);
+  }
+
+  span{
+    font-size: 55px;
   }
 }
 </style>

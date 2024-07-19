@@ -104,7 +104,7 @@ export default {
 
                     <div class="carousel-caption d-none d-md-block">
                         <h5>INSTRUMENTAL ROCK</h5>
-                        <h2>MUSIC IN THE SPIRT</h2>
+                        <h2 class="spirit">MUSIC IN THE VIDEO</h2>
                         <button class="my_btn_read">READ MORE</button>
                     </div>
                 </div>
@@ -116,7 +116,7 @@ export default {
 
                         <!-- <div class="my_caption"> -->
                             <h5>INSTRUMENTAL ROCK</h5>
-                            <h2>MUSIC IN THE SPIRT</h2>
+                            <h2 class="spirit">MUSIC OF THE SPIRIT</h2>
                             <button class="my_btn_read">READ MORE</button>
                         <!-- </div>                         -->
                     </div>
@@ -240,7 +240,7 @@ export default {
                         </svg>
                     </div>
                     <!-- importazione video -->
-                    <iframe width="1420" height="565" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                    <iframe width="80%" height="50%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                 </div>  
                 
             </div>
@@ -268,16 +268,18 @@ export default {
   <CounterIcon />
   <!-- Musci blog da rifa -->
   <section>
-    <div class="container-fluid">
+    <div class="container-fluid bg-black">
       <div class="row bg-black justify-content-center">
         <div class="col-9">
           <h5>MUSIC BLOG</h5>
           <h2>BEST MUSIC BLOG</h2>
-          <AppCarosel />
         </div>
       </div>
     </div>
   </section>
+  <div class="bg-black text-white">
+    <AppCarosel />
+  </div>
   <section>
         <div class="my_instagram_carosel">
             <div class="instragam_img" v-for="(img,i) in instragamImg" :key="i">
@@ -310,6 +312,7 @@ export default {
 // caption del carosello iniziale posizione centrale
 .carousel-caption{
         position:absolute;
+        width: 100%;
         left:50%;
         top:50%;
         bottom:auto;
@@ -459,7 +462,7 @@ h5 {
 
 // icona del player
   .my_icon_player{
-    width:100px;
+    width: 100px;
     color:orange;
     border:5px solid orange;
     border-radius: 50%;
@@ -520,5 +523,10 @@ iframe {
             transform: scale(1.1);
         }
     }
+}
+
+// Carosel Font
+.spirit{
+  font-size: 55px;
 }
 </style>

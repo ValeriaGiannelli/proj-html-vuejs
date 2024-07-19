@@ -125,5 +125,8 @@ export default {
     background-color: black;
 }
 
+button{
+    font-size: 20px;
+}
 
 </style>
