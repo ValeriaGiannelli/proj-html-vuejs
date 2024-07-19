@@ -148,7 +148,7 @@ export default {
 
   <!-- Sezione tre icons e sense the jazz -->
   <div class="container-fluid" id="position_icons">
-    <div class="row my_icons_home">
+    <div class="row jusitfy-contante-around my_icons_home">
 
      <!-- icona -->
       <div class="col-3 d-flex justify-content-center my_bg_dark">
@@ -314,7 +314,7 @@ export default {
         position:absolute;
         width: 100%;
         left:50%;
-        top:50%;
+        top:42%;
         bottom:auto;
         transform: translate(-50%, -50%);
         opacity: 0;
@@ -350,7 +350,6 @@ export default {
         flex-direction: column;
         align-items: center;
         width:80%;
-        margin: 50px;
         // all'over della card diventa bianco
         &:hover .animation .pulsating-circle{
           display: block;
@@ -378,7 +377,7 @@ export default {
           }
 
           svg{
-            max-height: 150px;
+            max-height: 130px;
             fill: white;
             z-index: 1;
             &:hover {
@@ -390,8 +389,8 @@ export default {
           .pulsating-circle{
             display:none;
             position:absolute;
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
           
             // box-shadow: ;
@@ -418,7 +417,7 @@ export default {
     opacity: 1;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.4);
     opacity: 0;
   }
   100% {

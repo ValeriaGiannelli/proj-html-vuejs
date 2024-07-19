@@ -46,7 +46,7 @@ export default{
 
         <div class="container-fluid">
             <!-- logo -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="/assets/Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             </a>
             
