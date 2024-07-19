@@ -35,4 +35,8 @@ export default{
 .padding{
     padding: 150px;
 }
+
+h1{
+    font-size: 64px;
+}
 </style>

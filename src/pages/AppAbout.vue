@@ -21,7 +21,7 @@ export default{
             
             infoBread: [
                 {
-                    "namePath": "About Us",
+                    "namePath": "ABOUT US",
                     "home": "Home"
                 }
             ]
