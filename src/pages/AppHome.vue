@@ -241,16 +241,18 @@ export default {
   <CounterIcon />
   <!-- Musci blog da rifa -->
   <section>
-    <div class="container-fluid">
+    <div class="container-fluid bg-black">
       <div class="row bg-black justify-content-center">
         <div class="col-9">
           <h5>MUSIC BLOG</h5>
           <h2>BEST MUSIC BLOG</h2>
-          <AppCarosel />
         </div>
       </div>
     </div>
   </section>
+  <div class="bg-black text-white">
+    <AppCarosel />
+  </div>
   <section>
         <div class="my_instagram_carosel">
             <div class="instragam_img" v-for="(img,i) in instragamImg" :key="i">
