@@ -137,6 +137,14 @@ button{
 #sense_effect{
     position: relative;
 }
+.accordion-button::after{
+    content: "";
+    background-image: url(../../public/assets/angles-down-solid.svg);
+}
+
+.accordion-button:not(.collapsed)::after{
+    background-image: url(../../public/assets/angles-down-solid.svg);
+}
 
 #sense_effect::before{
     content: "";
@@ -161,7 +169,6 @@ button{
 }
 #sense_effect:hover::before,
 #sense_effect:hover::after{
-    
     animation: hover_effect 1s;
     animation-fill-mode: forwards,
 }
