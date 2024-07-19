@@ -14,9 +14,10 @@ img {
 // css per i link
 a {
     text-decoration: none;
-    color:$secondary;
-    &:hover{
-        color:$primary;
+    color: $secondary;
+
+    &:hover {
+        color: $primary;
     }
 }
 
@@ -38,7 +39,7 @@ ul {
     border: 1px solid $primary;
     color: $secondary;
     transition: 0.5s;
-   
+
 
     &:hover {
         cursor: pointer;
@@ -46,9 +47,15 @@ ul {
     }
 }
 
-.form-control{
+.form-control {
     border-radius: 0;
-    background-color: black;
+    background-color: $bgcolor;
     color: $secondary;
     border-color: gray;
+
+    &:focus {
+        background-color: $bgcolor;
+        color: $secondary;
+
+    }
 }

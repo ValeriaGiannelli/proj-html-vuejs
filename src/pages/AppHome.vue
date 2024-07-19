@@ -585,8 +585,8 @@ h5 {
 // icona del player
   .my_icon_player{
     width: 100px;
-    color:orange;
-    border:5px solid orange;
+    color:$primary;
+    border:5px solid $primary;
     border-radius: 50%;
     padding: 30px;
     padding-left: 40px;
@@ -608,7 +608,7 @@ iframe {
     display: none;
     width: 100%;
     height: 100%;
-    background: black;
+    background: $bgcolor;
     opacity: 0.9;
     position: fixed;
     top: 0; /* Correzione per coprire l'intera pagina */

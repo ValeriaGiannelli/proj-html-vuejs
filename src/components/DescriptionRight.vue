@@ -17,7 +17,9 @@ export default {
 
         <!-- img -->
         <div class="box">
-            <img src="/img_about/about_Img-02.jpg" alt="">
+            <div id="sense_effect">
+                <img src="/img_about/about_Img-02.jpg" alt="">
+            </div>
         </div>
         <div class="box">
             
@@ -130,6 +132,69 @@ export default {
 
 button{
     font-size: 20px;
+}
+
+#sense_effect{
+    position: relative;
+}
+
+#sense_effect::before{
+    content: "";
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+    transition: all 0.6s ease-in-out;
+    z-index: 10;
+}
+
+#sense_effect::after{
+    content: "";
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(180deg);
+    transition: all 0.6s ease-in-out;
+    z-index: 10;
+}
+#sense_effect:hover::before,
+#sense_effect:hover::after{
+    
+    animation: hover_effect 1s;
+    animation-fill-mode: forwards,
+}
+
+#sense_effect:not(hover)::before,
+#sense_effect:not(hover)::after{
+    
+    animation: not_hover_effect 1s;
+    animation-fill-mode: forwards,
+}
+
+@keyframes hover_effect {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        transform: rotate(0);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes not_hover_effect {
+    0%{
+        transform: rotate(0);
+        width: 100%;
+        height: 100%;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
 }
 
 </style>
