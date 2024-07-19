@@ -349,7 +349,7 @@ export default {
       </div>
     </div>
   </section>
-  <AlbumNow />
+  <AlbumNow align="left"/>
   <CounterIcon />
   <!-- Musci blog da rifa -->
   <section>

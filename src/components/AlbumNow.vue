@@ -1,20 +1,26 @@
 <script>
 export default{
     name: "AblumNow",
+    props:{
+        align:{
+            type: String,
+            default: 'center',
+        }
+    }
 }
 </script>
 
 <template>
     <!-- Immagine della chitarra da inserire in Home e AbouUs -->
-     <div class="container-fluid my_padding">
-        <div class="row">
-            <div class="col">
+    <div class="container-fluid my_padding">
+        <div class="row justify-content-center">
+            <div :class="['col-10', {'text-start' : align === 'left'}]">
                 <h5>INSTRUMENTAL ROCK</h5>
                 <h2>ALBUM OUT NOW</h2>
                 <button class="my_btn_read">READ MORE</button>
             </div>
         </div>
-     </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
