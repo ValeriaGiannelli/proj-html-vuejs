@@ -1,5 +1,5 @@
-# Vue 3 + Vite
+# proj-html-vuejs
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Riproduzione di un sito vetrina di una ipotetica jazz band.
+Il progetto è stato realizzato in Vue le pagine create sono state quelle relative alla Home Page, About e Contact, collegate tra loro tramite route.
+Sono stati implementate le interazioni col mouse e il counter per la visualizzazione dei concerti.
